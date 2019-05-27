@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IrisService } from '../iris.service';
+import { Iris } from '../Iris';
 
 @Component({
   selector: 'app-iris',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./iris.component.css']
 })
 export class IrisComponent implements OnInit {
-
-  constructor() { }
+  iris: Iris ={
+    "sepalLength":2,
+    "sepalWidth":1,
+    "petalLength":3,
+    "petalWidth":4,
+  };
+  constructor(private irisService: IrisService) { }
 
   ngOnInit() {
   }
-
 }
