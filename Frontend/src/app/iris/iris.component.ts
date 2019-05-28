@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IrisService } from '../iris.service';
 import { Iris } from '../Iris';
+import { Espece } from '../Espece';
 
 @Component({
   selector: 'app-iris',
@@ -8,7 +9,9 @@ import { Iris } from '../Iris';
   styleUrls: ['./iris.component.css']
 })
 export class IrisComponent implements OnInit {
-  iris: Iris ={
+  espece: Espece = { species: 8 };
+  
+  iris: Iris = {
     "sepalLength":2,
     "sepalWidth":1,
     "petalLength":3,
@@ -18,4 +21,11 @@ export class IrisComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  public predict() {
+    this.irisService.predict(this.iris).subscribe((espece) => {
+        this.espece = espece;
+    });
+  }
+
 }
