@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppartService } from '../appart.service';
 import { Appart } from '../Appart';
 import { Prix } from '../Prix';
-import * as caracteristiques from '../caracteristiques';
+import * as caracteristiques from '../Caracteristiques';
 
 
 @Component({
