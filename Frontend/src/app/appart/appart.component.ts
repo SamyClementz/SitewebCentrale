@@ -30,11 +30,11 @@ export class AppartComponent implements OnInit {
     
     neighbourhood_cleansed: this.neighbourhood_cleansed[0],
 
-    property_type: "test",
+    property_type: this.property_type[0],
 
-    room_type: "test",
+    room_type: this.room_type[0],
 
-    bed_type: "test",
+    bed_type: this.bed_type[0],
 
     amenities: []
   };
@@ -42,12 +42,11 @@ export class AppartComponent implements OnInit {
 
   constructor(private appartService: AppartService) { }
 
-  ngOnInit() {
-    console.log(this.appart.neighbourhood_cleansed);
-  }
+  ngOnInit() {}
 
-  // public predict() {
-  //  this.appartService.predict(this.appart).subscribe((prix) => {
-  //      this.prix = prix;
-  //  });
+//   public predict() {
+//     this.appartService.predict(this.appart).subscribe((prix) => {
+//         this.prix = prix;
+//     });
+// 
 }
