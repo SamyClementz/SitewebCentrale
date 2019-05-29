@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { IrisService } from '../iris.service';
-import { Iris } from '../Iris';
-import { Espece } from '../Espece';
+import { AppartService } from '../appart.service';
+import { Appart } from '../Appart';
+import { Prix } from '../Prix';
 import * as caracteristiques from '../caracteristiques';
 
 
 @Component({
-  selector: 'app-iris',
-  templateUrl: './iris.component.html',
-  styleUrls: ['./iris.component.css']
+  selector: 'app-appart',
+  templateUrl: './appart.component.html',
+  styleUrls: ['./appart.component.css']
 })
-export class IrisComponent implements OnInit {
-  espece: Espece = { species: 8 };
+export class AppartComponent implements OnInit {
+  prix: Prix = { dollars: 0 };
   
   neighbourhood_cleansed = caracteristiques.NEIGHBOURHOOD_CLEANSED;
   property_type = caracteristiques.PROPERTY_TYPE;
@@ -19,7 +19,7 @@ export class IrisComponent implements OnInit {
   bed_type = caracteristiques.BED_TYPE;
   amenities = caracteristiques.AMENITIES;
 
-  iris: Iris = {
+  appart: Appart = {
     host_listings_count: 1,
     accommodates: 1,
     bathrooms: 1,
@@ -40,14 +40,14 @@ export class IrisComponent implements OnInit {
   };
 
 
-  constructor(private irisService: IrisService) { }
+  constructor(private appartService: AppartService) { }
 
   ngOnInit() {
-    console.log(this.iris.neighbourhood_cleansed);
+    console.log(this.appart.neighbourhood_cleansed);
   }
 
   // public predict() {
-  //  this.irisService.predict(this.iris).subscribe((espece) => {
-  //      this.espece = espece;
+  //  this.appartService.predict(this.appart).subscribe((prix) => {
+  //      this.prix = prix;
   //  });
 }

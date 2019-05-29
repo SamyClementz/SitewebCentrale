@@ -1,13 +1,13 @@
 <div class="container">
 
-  <h1>Prédiction d'espèces de fleurs d'Iris </h1>
+  <h1>Prédiction du prix d'un logement Airbnb </h1>
   <form>
     <div class="form-group">
       <label for="host_listings_count">Nombre d'annonces antérieures</label>
       <input type="number" class="form-control" id="host_listings_count" 
       required 
       step="1"
-      [(ngModel)]="iris.host_listings_count" name="host_listings_count">
+      [(ngModel)]="appart.host_listings_count" name="host_listings_count">
     </div>
 
     <div class="form-group">
@@ -15,7 +15,7 @@
       <input type="number" class="form-control" id="accommodates"
       required 
       step="1"
-      [(ngModel)]="iris.accommodates" name="accommodates">
+      [(ngModel)]="appart.accommodates" name="accommodates">
     </div>
 
     <div class="form-group">
@@ -23,7 +23,7 @@
       <input type="number" class="form-control" id="bathrooms" 
       required 
       step="1"
-      [(ngModel)]="iris.bathrooms" name="bathrooms">
+      [(ngModel)]="appart.bathrooms" name="bathrooms">
     </div>
 
     <div class="form-group">
@@ -31,7 +31,7 @@
       <input type="number" class="form-control" id="bedrooms" 
       required 
       step="1"
-      [(ngModel)]="iris.bedrooms" name="bedrooms">
+      [(ngModel)]="appart.bedrooms" name="bedrooms">
     </div>
 
     <div class="form-group">
@@ -39,7 +39,7 @@
       <input type="number" class="form-control" id="beds" 
       required 
       step="1"
-      [(ngModel)]="iris.beds" name="beds">
+      [(ngModel)]="appart.beds" name="beds">
     </div>
 
     <div class="form-group">
@@ -47,7 +47,7 @@
       <input type="number" class="form-control" id="number_of_reviews" 
       required 
       step="1"
-      [(ngModel)]="iris.number_of_reviews" name="number_of_reviews">
+      [(ngModel)]="appart.number_of_reviews" name="number_of_reviews">
     </div>
 
     <div class="form-group">
@@ -55,7 +55,18 @@
       <input type="number" class="form-control" id="metres" 
       required 
       step="1"
-      [(ngModel)]="iris.metres" name="metres">
+      [(ngModel)]="appart.metres" name="metres">
+    </div>
+
+    <div class="form-group">
+      <label for="neighbourhood_cleansed">Example select</label>
+      <select class="form-control" id="neighbourhood_cleansed">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
     </div>
 
     <button type="submit" class="btn btn-success" (click)="predict()">Envoyer</button>
@@ -63,5 +74,5 @@
   </form>
 </div>
 
-<div *ngIf="espece">
-  <p>{{ espece.species }}</p></div>
+<div *ngIf="prix">
+  <p>{{ prix.dollars }}</p></div>

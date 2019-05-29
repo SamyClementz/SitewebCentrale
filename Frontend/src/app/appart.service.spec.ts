@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { IrisService } from './iris.service';
+import { AppartService } from './appart.service';
 
-describe('IrisService', () => {
+describe('AppartService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: IrisService = TestBed.get(IrisService);
+    const service: AppartService = TestBed.get(AppartService);
     expect(service).toBeTruthy();
   });
 });

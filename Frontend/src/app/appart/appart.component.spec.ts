@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IrisComponent } from './iris.component';
+import { AppartComponent } from './appart.component';
 
-describe('IrisComponent', () => {
-  let component: IrisComponent;
-  let fixture: ComponentFixture<IrisComponent>;
+describe('AppartComponent', () => {
+  let component: AppartComponent;
+  let fixture: ComponentFixture<AppartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IrisComponent ]
+      declarations: [ AppartComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IrisComponent);
+    fixture = TestBed.createComponent(AppartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

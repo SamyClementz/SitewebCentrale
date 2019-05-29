@@ -1,4 +1,4 @@
-export class Iris {    
+export class Appart {    
     host_listings_count: number;
     accommodates: number;
     bathrooms: number;
