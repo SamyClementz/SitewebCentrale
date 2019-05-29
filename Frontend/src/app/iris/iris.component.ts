@@ -10,22 +10,31 @@ import { Espece } from '../Espece';
 })
 export class IrisComponent implements OnInit {
   espece: Espece = { species: 8 };
-  
+
   iris: Iris = {
-    "sepalLength":2,
-    "sepalWidth":1,
-    "petalLength":3,
-    "petalWidth":4,
+    host_listings_count:  1,
+    accommodates:  1,
+    bathrooms:  1,
+    bedrooms:  1,
+    beds:  1,
+    number_of_reviews:  1,
+    metres:  40,
+    neighbourhood_cleansed: "test",
+
+    property_type: "test",
+
+    room_type: "test",
+    bed_type: "test",
+
+    amenities: []
   };
   constructor(private irisService: IrisService) { }
 
   ngOnInit() {
   }
-  
-  public predict() {
-    this.irisService.predict(this.iris).subscribe((espece) => {
-        this.espece = espece;
-    });
-  }
 
+  // public predict() {
+  //  this.irisService.predict(this.iris).subscribe((espece) => {
+  //      this.espece = espece;
+  //  });
 }

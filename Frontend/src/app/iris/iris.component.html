@@ -3,35 +3,59 @@
   <h1>Prédiction d'espèces de fleurs d'Iris </h1>
   <form>
     <div class="form-group">
-      <label for="sepalLength">Longueur de la sépale</label>
-      <input type="number" class="form-control" id="sepalLength" 
+      <label for="host_listings_count">Nombre d'annonces antérieures</label>
+      <input type="number" class="form-control" id="host_listings_count" 
       required 
-      step="0.01"
-      [(ngModel)]="iris.sepalLength" name="sepalLength">
+      step="1"
+      [(ngModel)]="iris.host_listings_count" name="host_listings_count">
     </div>
 
     <div class="form-group">
-      <label for="sepalWidth">Largeur de la sépale</label>
-      <input type="number" class="form-control" id="sepalWidth"
+      <label for="accommodates">Nombre d'équipements</label>
+      <input type="number" class="form-control" id="accommodates"
       required 
-      step="0.01"
-      [(ngModel)]="iris.sepalWidth" name="sepalWidth">
+      step="1"
+      [(ngModel)]="iris.accommodates" name="accommodates">
     </div>
 
     <div class="form-group">
-      <label for="petalLength">Longueur de la pétale</label>
-      <input type="number" class="form-control" id="petalLength" 
+      <label for="bathrooms">Nombre de salles de bain</label>
+      <input type="number" class="form-control" id="bathrooms" 
       required 
-      step="0.01"
-      [(ngModel)]="iris.petalLength" name="petalLength">
+      step="1"
+      [(ngModel)]="iris.bathrooms" name="bathrooms">
     </div>
 
     <div class="form-group">
-      <label for="petalWidth">Largeur de la pétale</label>
-      <input type="number" class="form-control" id="petalWidth" 
+      <label for="bedrooms">Nombre de chambres à coucher</label>
+      <input type="number" class="form-control" id="bedrooms" 
       required 
-      step="0.01"
-      [(ngModel)]="iris.petalWidth" name="petalWidth">
+      step="1"
+      [(ngModel)]="iris.bedrooms" name="bedrooms">
+    </div>
+
+    <div class="form-group">
+      <label for="beds">Nombre de lits</label>
+      <input type="number" class="form-control" id="beds" 
+      required 
+      step="1"
+      [(ngModel)]="iris.beds" name="beds">
+    </div>
+
+    <div class="form-group">
+      <label for="number_of_reviews">Nombre de commentaires</label>
+      <input type="number" class="form-control" id="number_of_reviews" 
+      required 
+      step="1"
+      [(ngModel)]="iris.number_of_reviews" name="number_of_reviews">
+    </div>
+
+    <div class="form-group">
+      <label for="metres">Surface en m²</label>
+      <input type="metres" class="form-control" id="metres" 
+      required 
+      step="1"
+      [(ngModel)]="iris.metres" name="metres">
     </div>
 
     <button type="submit" class="btn btn-success" (click)="predict()">Envoyer</button>
