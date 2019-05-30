@@ -1,6 +1,9 @@
 # Evaluation de prix de logements Airbnb
 
-Le modèle de prédiction est un estimateur Lasso exporté avec joblib.
+Frontend : Angular, Bootstrap
+Backend : Flask
+
+Le modèle de prédiction est un estimateur Lasso exporté avec la bibliothèque joblib de Python.
 Kaggle : https://www.kaggle.com/csamy45/centrale-airbnb
 
 Set up :
