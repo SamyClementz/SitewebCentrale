@@ -20,12 +20,12 @@ export class AppartComponent implements OnInit {
   amenities = caracteristiques.AMENITIES;
 
   appart: Appart = {
-    host_listings_count: 1,
+    host_listings_count: 0,
     accommodates: 1,
     bathrooms: 1,
     bedrooms: 1,
     beds: 1,
-    number_of_reviews: 1,
+    number_of_reviews: 0,
     metres: 40,
     
     neighbourhood_cleansed: this.neighbourhood_cleansed[0],
