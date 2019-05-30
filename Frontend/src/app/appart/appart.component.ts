@@ -39,14 +39,20 @@ export class AppartComponent implements OnInit {
     amenities: []
   };
 
+  appartToSend: number[];
+
+  convertAppartToArray() {
+
+  }
 
   constructor(private appartService: AppartService) { }
 
   ngOnInit() {}
 
-//   public predict() {
-//     this.appartService.predict(this.appart).subscribe((prix) => {
-//         this.prix = prix;
-//     });
-// 
+  public predict() {
+    this.appartService.predict(this.appart).subscribe((prix) => {
+        this.prix = prix;
+    });
+}
+ 
 }

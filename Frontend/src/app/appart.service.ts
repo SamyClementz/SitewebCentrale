@@ -14,6 +14,8 @@ import { map } from 'rxjs/operators';
 export class AppartService {
 
   constructor(private http: HttpClient) { }
+
+
   public predict(appart: Appart): Observable<Prix> {
     return this.http.post<Prix>(`api/predict`, appart);
   }
