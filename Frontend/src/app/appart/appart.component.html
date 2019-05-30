@@ -1,0 +1,118 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="host_listings_count">Nombre d'annonces antérieures</label>
+      <input type="number" class="form-control" id="host_listings_count" 
+      required 
+      step="1"
+      min="0"
+      [(ngModel)]="appart.host_listings_count" name="host_listings_count">
+    </div>
+
+    <div class="form-group">
+      <label for="accommodates">Nombre de locataires</label>
+      <input type="number" class="form-control" id="accommodates"
+      required 
+      step="1"
+      min="0"
+      [(ngModel)]="appart.accommodates" name="accommodates">
+    </div>
+
+    <div class="form-group">
+      <label for="bathrooms">Nombre de salles de bain</label>
+      <input type="number" class="form-control" id="bathrooms" 
+      required 
+      step="1"
+      min="0"
+      [(ngModel)]="appart.bathrooms" name="bathrooms">
+    </div>
+
+    <div class="form-group">
+      <label for="bedrooms">Nombre de chambres à coucher</label>
+      <input type="number" class="form-control" id="bedrooms" 
+      required 
+      step="1"
+      min="0"
+      [(ngModel)]="appart.bedrooms" name="bedrooms">
+    </div>
+
+    <div class="form-group">
+      <label for="beds">Nombre de lits</label>
+      <input type="number" class="form-control" id="beds" 
+      required 
+      step="1"
+      min="0"
+      [(ngModel)]="appart.beds" name="beds">
+    </div>
+
+    <div class="form-group">
+      <label for="number_of_reviews">Nombre de commentaires</label>
+      <input type="number" class="form-control" id="number_of_reviews" 
+      required 
+      step="1"
+      min="0"
+      [(ngModel)]="appart.number_of_reviews" name="number_of_reviews">
+    </div>
+
+    <div class="form-group">
+      <label for="metres">Surface en m²</label>
+      <input type="number" class="form-control" id="metres" 
+      required 
+      step="1"
+      min="0"
+      [(ngModel)]="appart.metres" name="metres">
+    </div>
+
+    <div class="form-group">
+      <label for="neighbourhood_cleansed">Quartier</label>
+      <select class="form-control"  id="neighbourhood_cleansed"
+              required
+              [(ngModel)]="appart.neighbourhood_cleansed" name="neighbourhood_cleansed">
+        <option *ngFor="let car of neighbourhood_cleansed" [value]="car">{{car}}</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="property_type">Type de propriété</label>
+      <select class="form-control"  id="property_type"
+              required
+              [(ngModel)]="appart.property_type" name="property_type">
+        <option *ngFor="let car of property_type" [value]="car">{{car}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="room_type">Type de chambre</label>
+      <select class="form-control"  id="room_type"
+              required
+              [(ngModel)]="appart.room_type" name="room_type">
+        <option *ngFor="let car of room_type" [value]="car">{{car}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="bed_type">Type de lit</label>
+      <select class="form-control"  id="bed_type"
+              required
+              [(ngModel)]="appart.bed_type" name="bed_type">
+        <option *ngFor="let car of bed_type" [value]="car">{{car}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="amenities">Equipements (sélection multiple avec Ctrl)</label>
+      <select multiple class="form-control"  id="amenities"
+              required
+              [(ngModel)]="appart.amenities" name="amenities">
+        <option *ngFor="let car of amenities" [value]="car">{{car}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="predict()">Envoyer</button>
+
+  </form>
+</div>
+
+<div *ngIf="prix">
+  <p>Prédiction de prix : {{ prix.dollars.toPrecision(3) }} $</p></div>

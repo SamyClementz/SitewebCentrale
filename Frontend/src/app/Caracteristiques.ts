@@ -1,79 +1,77 @@
-from flask import Flask, request, jsonify
-from joblib import load
-import sys
-import numpy as np
-app = Flask(__name__)
+export const NEIGHBOURHOOD_CLEANSED: string[] = [
+  'Batignolles-Monceau',
+  'Bourse',
+  'Buttes-Chaumont',
+  'Buttes-Montmartre',
+  'Entrepôt',
+  'Gobelins',
+  'Hôtel-de-Ville',
+  'Louvre',
+  'Luxembourg',
+  'Ménilmontant',
+  'Observatoire',
+  'Opéra',
+  'Palais-Bourbon',
+  'Panthéon',
+  'Passy',
+  'Popincourt',
+  'Reuilly',
+  'Temple',
+  'Vaugirard',
+  'Élysée',
+];
 
-@app.route('/api/predict', methods=['POST'])
-def predict():
-   listeCaracteristiques = ['host_listings_count',
- 'accommodates',
- 'bathrooms',
- 'bedrooms',
- 'beds',
- 'number_of_reviews',
- 'metres',
- 'Batignolles-Monceau',
- 'Bourse',
- 'Buttes-Chaumont',
- 'Buttes-Montmartre',
- 'Entrepôt',
- 'Gobelins',
- 'Hôtel-de-Ville',
- 'Louvre',
- 'Luxembourg',
- 'Ménilmontant',
- 'Observatoire',
- 'Opéra',
- 'Palais-Bourbon',
- 'Panthéon',
- 'Passy',
- 'Popincourt',
- 'Reuilly',
- 'Temple',
- 'Vaugirard',
- 'Élysée',
- 'Aparthotel',
- 'Apartment',
- 'Barn',
- 'Bed and breakfast',
- 'Boat',
- 'Boutique hotel',
- 'Bungalow',
- 'Cabin',
- 'Casa particular (Cuba)',
- 'Castle',
- 'Cave',
- 'Chalet',
- 'Condominium',
- 'Cottage',
- 'Dome house',
- 'Earth house',
- 'Guest suite',
- 'Guesthouse',
- 'Hostel',
- 'Hotel',
- 'House',
- 'Houseboat',
- 'Igloo',
- 'Loft',
- 'Nature lodge',
- 'Resort',
- 'Serviced apartment',
- 'Tiny house',
- 'Tipi',
- 'Townhouse',
- 'Treehouse',
- 'Villa',
- 'Entire home/apt',
+export const PROPERTY_TYPE: string[] = [
+  'Aparthotel',
+  'Apartment',
+  'Barn',
+  'Bed and breakfast',
+  'Boat',
+  'Boutique hotel',
+  'Bungalow',
+  'Cabin',
+  'Casa particular (Cuba)',
+  'Castle',
+  'Cave',
+  'Chalet',
+  'Condominium',
+  'Cottage',
+  'Dome house',
+  'Earth house',
+  'Guest suite',
+  'Guesthouse',
+  'Hostel',
+  'Hotel',
+  'House',
+  'Houseboat',
+  'Igloo',
+  'Loft',
+  'Nature lodge',
+  'Resort',
+  'Serviced apartment',
+  'Tiny house',
+  'Tipi',
+  'Townhouse',
+  'Treehouse',
+  'Villa', 
+];
+
+export const ROOM_TYPE: string[] = [
+  'Entire home/apt',
  'Private room',
  'Shared room',
- 'Airbed',
+];
+
+export const BED_TYPE: string[] = [
+  'Airbed',
  'Couch',
  'Futon',
  'Pull-out Sofa',
  'Real Bed',
- ' toilet',
+];
+
+export const AMENITIES: string[] = [
+  ' toilet',
  '24-hour check-in',
  'Accessible-height bed',
  'Accessible-height toilet',
@@ -241,24 +239,5 @@ def predict():
  'Wide hallway clearance',
  'Wifi',
  'Window guards',
- 'Wine cooler']
-   X = request.get_json()
-   print(X, file=sys.stderr)
-   inputModel = np.zeros(236)
-   inputModel[0] = X['host_listings_count']
-   inputModel[1] = X['accommodates']
-   inputModel[2] = X['bathrooms']
-   inputModel[3] = X['bedrooms']
-   inputModel[4] = X['beds']
-   inputModel[5] = X['number_of_reviews']
-   inputModel[6] = X['metres']
-   inputModel[listeCaracteristiques.index(X['neighbourhood_cleansed'])] = 1
-   inputModel[listeCaracteristiques.index(X['property_type'])] = 1
-   inputModel[listeCaracteristiques.index(X['room_type'])] = 1
-   inputModel[listeCaracteristiques.index(X['bed_type'])] = 1
-   for amn in X['amenities']:
-      inputModel[listeCaracteristiques.index(amn)] = 1
-   
-   estimateur = load('MachineLearning/modelLasso.joblib') 
-   prediction = estimateur.predict([inputModel])
-   return(jsonify({"dollars": prediction[0]}))
+ 'Wine cooler'
+];
