@@ -1,6 +1,6 @@
 # Evaluation de prix de logements Airbnb
 
-Frontend : Angular, Bootstrap
+Frontend : Angular, Bootstrap.
 Backend : Flask
 
 Le modèle de prédiction est un estimateur Lasso exporté avec la bibliothèque joblib de Python.
